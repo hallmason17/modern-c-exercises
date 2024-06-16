@@ -10,21 +10,20 @@ void printArr(double arr[], size_t arrSize) {
 }
 
 void merge(double arr[], int l, int m, int r) {
-        size_t Lsize = m - l + 1;
-        size_t Rsize = r - m;
+        int Lsize = m - l + 1;
+        int Rsize = r - m;
         double L[Lsize];
         double R[Rsize];
+        int i, j, k;
 
-        for (size_t i = 0; i < Lsize; ++i) {
+        for (i = 0; i < Lsize; i++)
                 L[i] = arr[l + i];
-        }
+        for (j = 0; j < Rsize; j++)
+                R[j] = arr[m + 1 + j];
 
-        for (size_t i = 0; i < Rsize; ++i) {
-                R[i] = arr[m + i + 1];
-        }
-
-        int i, j = 0;
-        int k = l;
+        i = 0;
+        j = 0;
+        k = l;
 
         while (i < Lsize && j < Rsize) {
                 if (L[i] <= R[j]) {
