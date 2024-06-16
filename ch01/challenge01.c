@@ -64,7 +64,5 @@ int main(void) {
 
         mergeSort(A, 0, arrSize - 1);
 
-        for (size_t i = 0; i < sizeof(A) / sizeof(A[0]); ++i) {
-                printf("%f ", A[i]);
-        }
+        printArr(A, arrSize);
 }
